@@ -56,12 +56,13 @@ services:
         image: ilteoood/docker-surfshark
         container_name: surfshark
         environment: 
-            - SURFSHARK_USER=YOUR_SURFSHARK_USER
-            - SURFSHARK_PASSWORD=YOUR_SURFSHARK_PASSWORD
             - SURFSHARK_COUNTRY=it
             - SURFSHARK_CITY=mil
             - CONNECTION_TYPE=udp
             - LAN_NETWORK=
+        secrets:
+            - SURFSHARK_USER
+            - SURFSHARK_PASSWORD
         cap_add: 
             - NET_ADMIN
         devices:
@@ -91,6 +92,12 @@ services:
             #- 9091:9091 needed to access transmission's GUI
         network_mode: service:surfshark
         restart: unless-stopped
+
+secrets:
+    SURFSHARK_USER:
+        file: ./secrets/SURFSHARK_USER.env
+    SURFSHARK_PASSWORD:
+        file: ./secrets/SURFSHARK_PASSWORD.env
 ```
 
 Or you can use the standard `docker run` command.
