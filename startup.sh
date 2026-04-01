@@ -1,4 +1,6 @@
 #!/bin/sh
+./secrets2env.sh
+
 rm -rf ovpn_configs*
 if [ -z "${OVPN_CONFIGS}" ]; then
   wget -O ovpn_configs.zip ${SURFSHARK_CONFIGS_ENDPOINT}
