@@ -4,8 +4,6 @@ LABEL maintainer.name="Matteo Pietro Dazzi" \
     version="1.8.1" \
     description="OpenVPN client and socks5 server configured for SurfShark VPN"
 WORKDIR /vpn
-ENV SURFSHARK_USER=
-ENV SURFSHARK_PASSWORD=
 ENV SURFSHARK_COUNTRY=
 ENV SURFSHARK_CITY=
 ENV SURFSHARK_CONFIGS_ENDPOINT=https://my.surfshark.com/vpn/api/v1/server/configurations
